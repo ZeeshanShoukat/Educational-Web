@@ -1,11 +1,10 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Scholar Vision</title>
    
     <!-- Custom-Stylesheet-Links -->
-@Styles.Render("~/ bundles / LibMaincss")
+@Styles.Render("~/bundles/LibMaincss")
        <!-- //Custom-Stylesheet-Links -->
     <!--web-fonts-->
     <!-- Headings-font -->
@@ -17,10 +16,10 @@
     <!-- js -->
 </head>
 <body>
-    <div class="banner" id="home">
+    <div class="banner inner-banner-w3-agileits" id="home">
         <div class="banner-overlay-agileinfo">
             <div class="top-header-agile">
-                <h1><a class="col-md-4 navbar-brand" href="index.html">Scholar Vision<span>Education for everyone</span></a></h1>
+                <h1><a class="col-md-4 navbar-brand" href="#">Scholar Vision<span>Education for everyone</span></a></h1>
                 <div class="col-md-4 top-header-agile-right">
                     <ul>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -32,7 +31,7 @@
                 <div class="col-md-4 top-header-agile-left">
                     <ul class="num-w3ls">
                         <li><i class="fa fa-phone" aria-hidden="true"></i></li>
-                        <li>+0 097 338 004</li>
+                        <li>+92331-6705586</li>
                     </ul>
                     <div class="w3ls_search">
                         <div class="cd-main-header">
@@ -51,8 +50,8 @@
                 <div class="clearfix"></div>
             </div>
 
-            <div class="container">
-                <nav class="navbar navbar-default">
+           
+            <nav class="navbar navbar-default">
                     <div class="navbar-header navbar-left">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
@@ -65,66 +64,76 @@
                     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                         <nav class="link-effect-3" id="link-effect-3">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html" data-hover="Home">Home</a></li>
-                                <li><a href="about.html" data-hover="About Us">About Us</a></li>
-                                <li><a href="gallery.html" data-hover="Gallery">Gallery</a></li>
+                 <li class="active">@Html.ActionLink("Home","index","Home")</li>
+                                <li>@Html.ActionLink("About","About","Home")</li>
+                                <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
+                                <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
+                                <li>@Html.ActionLink("Contact us", "Contact", "Home")</li>
                                 <li class="dropdown menu__item">
                                     <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">Pages<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="codes.html">Short Codes</a></li>
-                                        <li><a href="icons.html">Icons</a></li>
+                                        <li></li>
+                                        <li></li>
                                     </ul>
                                 </li>
-                                <li><a href="blog.html" data-hover="Blog">Blog</a></li>
-                                <li><a href="contact.html" data-hover="Mail Us">Contact Us</a></li>
                             </ul>
                         </nav>
                     </div>
                 </nav>
-                <div class="w3l_banner_info">
-                    <section class="slider">
-                        <div class="flexslider">
-                            <ul class="slides">
-                                <li>
-                                    <div class="wthree_banner_info_grid">
-                                        <h3><span>Genius</span>Welcome to <br>scholar vision</h3>
-                                        <p>Your child can be a genius</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="wthree_banner_info_grid">
-                                        <h3><span>Genius</span>Education <br>for everyone</h3>
-                                        <p>Your child can be a genius</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="wthree_banner_info_grid">
-                                        <h3><span>Genius</span>Welcome to <br>scholar vision</h3>
-                                        <p>Your child can be a genius</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="wthree_banner_info_grid">
-                                        <h3><span>Genius</span>Education <br>for everyone</h3>
-                                        <p>Your child can be a genius</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-
+            
+           
+        </div>
+    </div>
+    @RenderBody()
+    <!--footer-->
+    <div class="footer w3layouts">
+        <div class="container">
+            <div class="footer-row w3layouts-agile">
+                <div class="col-md-4 footer-grids w3l-agileits">
+                    <h6><a href="#">Scholar Vision</a></h6>
+                    <p class="footer-one-w3ls">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar tellus sed mauvehicula tempor. </p>
+                    <div class="top-header-agile-right">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
+                <div class="col-md-2 footer-grids w3l-agileits">
+                    <h3>Footer Menu</h3>
+                    <ul class="b-nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-grids w3l-agileits">
+                    <h3>Contact Info</h3>
+                    <p>Virginia, USA</p>
+                    <p>+0 097 338 004</p>
+                    <p>El Montee RV, Sterling USA</p>
+                    <p><a href="mailto:info@example.com">mail@example.com</a></p>
+                </div>
+                <div class="col-md-3 footer-grids w3l-agileits">
+                    <h3>Newsletter</h3>
+                    <p>It was popularised in the 1960s with the release Ipsum. <p>
+                        <form action="#" method="post">
+                            <input type="email" class="text" required="" />
+                            <input type="submit" value="Go" />
+                        </form>
+                </div>
+                <div class="clearfix"> </div>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-    </div>
-
-    <!--//footer-->
+    <!--//footer-->	
     <!-- copy-right -->
     <div class="copyright-wthree">
-        <p>&copy; 2017 Scholar Vision . All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts </a></p>
+        <p>&copy; 2017 Scholar Vision . All Rights Reserved | Design by <a href="#"> Zeeshan</a></p>
     </div>
     <!-- //copy-right -->
     @Scripts.Render("~/bundles/LibMainjs")

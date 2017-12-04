@@ -1,0 +1,71 @@
+﻿@model EducationalWebsite.ViewModels.ClassVm
+@{
+    ViewBag.Title = "AddClassDetail";
+    Layout = "~/Views/Shared/_Admin_layout.cshtml";
+}
+
+@Styles.Render("~/bundles/LibStudentcss")
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Add Class</h2>
+            <small class="text-muted">Welcome to Swift application</small>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>Basic Information <small>Description text here...</small> </h2>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    @using (Html.BeginForm("AddClassDetail", "Class", FormMethod.Post))
+                    {
+                        <div class="body">
+                            <div class="row clearfix">
+                                <div class="col-lg-4 col-sm-4 col-xs-12">
+                                    <div class="form-group drop-custum">
+                                        @Html.DropDownListFor(m => m.classDetail.ClassId, new SelectList(Model.Classes, "Id", "Name"), "Select Class", new { @class = "form-control show-tick" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-4 col-sm-4 col-xs-12">
+                                    <div class="form-group drop-custum">
+                                        @Html.DropDownListFor(m => m.classDetail.ClassSctionId, new SelectList(Model.ClassSections, "Id", "Name"), "Select Section", new { @class = "form-control show-tick" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-4 col-sm-4 col-xs-12">
+                                    <div class="form-group drop-custum">
+                                        @Html.DropDownListFor(m => m.classDetail.TeacherId, new SelectList(Model.Teachers, "Id", "FirstName"), "Select Teacher", new { @class = "form-control show-tick" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <button type="submit" class="btn btn-raised g-bg-blush2">Save</button>
+                            </div>
+                        </div>
+                       @Html.HiddenFor(m=>m.classDetail.Id)
+                    }
+                </div>
+            </div>
+        </div>
+
+</section>
+@Scripts.Render("~/bundles/LibStudentjs")
+
+
+
+

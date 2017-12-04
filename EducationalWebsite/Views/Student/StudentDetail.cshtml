@@ -1,0 +1,79 @@
+﻿@model IEnumerable<EducationalWebsite.Models.StudentDetail>
+@{
+    ViewBag.Title = "StudentDetail";
+    Layout = "~/Views/Shared/_Admin_layout.cshtml";
+}
+<!-- main content -->
+<section class="content patients">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>All Student</h2>
+            <small class="text-muted">Welcome to School Managment</small>
+        </div>
+        @*<div class="row clearfix">
+                @foreach (var std in Model)
+                {
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="card all-patients">
+                            <div class="body">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 text-center m-b-0">
+                                        <a href="#" class="p-profile-pix"><img src="~/AdminContent/images/random-avatar5.jpg" alt="user" class="img-circle img-responsive"></a>
+                                    </div>
+                                    <div class="col-md-8 col-sm-8 m-b-0">
+                                        <h5 class="m-b-0">@std.Name <a href="@Url.Action("UpdateStudent", "Student",new { id=std.Id})" class="edit"><i class="zmdi zmdi-edit"></i></a></h5> <small>Class</small>
+                                        <address class="m-t-10 m-b-0">
+                                            @std.Address<br><br>
+                                            <abbr title="Phone">P:</abbr> @std.Contact
+                                        </address>
+                                        <a href="@Url.Action("StudentProfile", "Student",new { id=std.Id})" class="btn btn-raised btn-sm">View Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>*@
+        <div class="row clearfix">
+            
+            @foreach (var std in Model)
+            {
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <div class="body">
+
+                            <div class="member-card verified">
+
+                                <ul class="header-dropdown">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="zmdi zmdi-more-vert"></i></a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="@Url.Action("UpdateStudent", "Student",new { id=std.Id})" class=" waves-effect waves-block">Edit</a></li>
+                                            <li><a href="@Url.Action("RemoveStudent", "Student",new { id=std.Id})" class=" waves-effect waves-block">Delete</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="thumb-xl member-thumb">
+                                    <img src="~/AdminContent/images/random-avatar3.jpg" class="img-circle" alt="profile-image">
+                                </div>
+                                <div>
+                                   <h5 class="m-b-0">@std.Student.Name</h5><small><b>Roll#</b> @std.Roll_No</small>
+                                    <address class="m-t-10 m-b-0">
+                                       @std.Student.Address<br><br>
+                                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                                    </address>
+                                </div>
+                                <p class="text-muted"></p>
+                                <a href="@Url.Action("StudentProfile", "Student",new { id=std.Id})" class="btn btn-raised btn-sm">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+
+        </div>
+    </div>
+</section>
+<!-- main content -->

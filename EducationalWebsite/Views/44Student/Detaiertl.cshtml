@@ -1,0 +1,36 @@
+﻿@model IEnumerable<EducationalWebsite.Models.Student>
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="inner-tittle-w3layouts">Detail Of Student</h2>
+<div class="container">
+
+    <table class="table table-responsive table-striped">
+        <thead>
+            <tr >
+                <td><b>RollNo</b></td>
+                <td><b>Name</b></td>
+                <td><b>FatherName</b></td>
+                <td><b>Gender</b></td>
+                <td><b>Contact</b></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var std in Model)
+            {
+                <tr>
+                    <td>@std.Roll_No</td>
+                    <td>@std.Name</td>
+                    <td>@std.FatherName</td>
+                    <td>@std.Gender.Type</td>
+                    <td>@std.Contact</td>
+                </tr>
+            }
+
+        </tbody>
+
+
+    </table>
+</div>

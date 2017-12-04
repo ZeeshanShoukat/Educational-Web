@@ -1,0 +1,58 @@
+﻿@model EducationalWebsite.ViewModels.StudentVm
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="inner-tittle-w3layouts">Add Student</h2>
+<div class="container">
+    @using (Html.BeginForm("AddStudent", "Student", FormMethod.Post))
+    {<div class="row">
+        <div class="form-group col-lg-6">
+            @Html.LabelFor(m => m.Student.Roll_No, new { @class = "control-label col-lg-3" })
+            @Html.TextBoxFor(m => m.Student.Roll_No, new { @class = "col-lg-9 form-control" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(m => m.Student.Name, new { @class = "control-label col-md-3" })
+            @Html.TextBoxFor(m => m.Student.Name, new { @class = "form-control col-md-9" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(m => m.Student.FatherName, new { @class = "control-label col-md-3" })
+            @Html.TextBoxFor(m => m.Student.FatherName, new { @class = "form-control col-md-9" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(m => m.Student.MotherName, new { @class = "control-label col-md-3" })
+            @Html.TextBoxFor(m => m.Student.MotherName, new { @class = "form-control col-md-9" })
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(m => m.Student.DateofBirth, new { @class = "control-label col-md-3" })
+            @Html.TextBoxFor(m => m.Student.DateofBirth, "{0:dd/mm/yyyy}", new { @class = "form-control", @type = "date" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(m => m.Student.GenderId, new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(m => m.Student.GenderId, new SelectList(Model.Genders, "Id", "Type"), "Select Gender", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(m => m.Student.B_Form, new { @class = "control-label col-md-3" })
+            @Html.TextBoxFor(m => m.Student.B_Form, new { @class = "form-control col-md-9" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(m => m.Student.Contact, new { @class = "control-label col-md-3" })
+            @Html.TextBoxFor(m => m.Student.Contact, new { @class = "form-control col-md-9" })
+        </div>
+        <div class="form-group col-md-12">
+            @Html.LabelFor(m => m.Student.Address, new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(m => m.Student.Address, new { @class = "form-control col-md-10" })
+        </div>
+        @Html.HiddenFor(m => m.Student.Id)
+        <div class="fa-align-right">
+            <button class="btn btn-primary" type="submit">Save</button>
+
+        </div>
+
+    </div>
+
+    }
+</div>
