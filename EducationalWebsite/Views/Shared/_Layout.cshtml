@@ -1,0 +1,218 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scholar Vision</title>
+   
+    <!-- Custom-Stylesheet-Links -->
+@Styles.Render("~/ bundles / LibMaincss")
+       <!-- //Custom-Stylesheet-Links -->
+    <!--web-fonts-->
+    <!-- Headings-font -->
+    <link href="//fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
+    <!-- Body-font -->
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <!--//web-fonts-->
+    <!--//fonts-->
+    <!-- js -->
+</head>
+<body>
+    <div class="banner" id="home">
+        <div class="banner-overlay-agileinfo">
+            <div class="top-header-agile">
+                <h1><a class="col-md-4 navbar-brand" href="index.html">Scholar Vision<span>Education for everyone</span></a></h1>
+                <div class="col-md-4 top-header-agile-right">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 top-header-agile-left">
+                    <ul class="num-w3ls">
+                        <li><i class="fa fa-phone" aria-hidden="true"></i></li>
+                        <li>+0 097 338 004</li>
+                    </ul>
+                    <div class="w3ls_search">
+                        <div class="cd-main-header">
+                            <ul class="cd-header-buttons">
+                                <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+                            </ul> <!-- cd-header-buttons -->
+                        </div>
+                        <div id="cd-search" class="cd-search">
+                            <form action="#" method="post">
+                                <input name="Search" type="search" placeholder="Search...">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="container">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header navbar-left">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <nav class="link-effect-3" id="link-effect-3">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="index.html" data-hover="Home">Home</a></li>
+                                <li><a href="about.html" data-hover="About Us">About Us</a></li>
+                                <li><a href="gallery.html" data-hover="Gallery">Gallery</a></li>
+                                <li class="dropdown menu__item">
+                                    <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">Pages<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="codes.html">Short Codes</a></li>
+                                        <li><a href="icons.html">Icons</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog.html" data-hover="Blog">Blog</a></li>
+                                <li><a href="contact.html" data-hover="Mail Us">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </nav>
+                <div class="w3l_banner_info">
+                    <section class="slider">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <h3><span>Genius</span>Welcome to <br>scholar vision</h3>
+                                        <p>Your child can be a genius</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <h3><span>Genius</span>Education <br>for everyone</h3>
+                                        <p>Your child can be a genius</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <h3><span>Genius</span>Welcome to <br>scholar vision</h3>
+                                        <p>Your child can be a genius</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <h3><span>Genius</span>Education <br>for everyone</h3>
+                                        <p>Your child can be a genius</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <!--//footer-->
+    <!-- copy-right -->
+    <div class="copyright-wthree">
+        <p>&copy; 2017 Scholar Vision . All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts </a></p>
+    </div>
+    <!-- //copy-right -->
+    @Scripts.Render("~/bundles/LibMainjs")
+    <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!-- //smooth scrolling -->
+    <!-- flexSlider -->
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+    </script>
+    <!-- //flexSlider -->
+
+
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo2").owlCarousel({
+                items: 1,
+                lazyLoad: false,
+                autoPlay: true,
+                navigation: false,
+                navigationText: false,
+                pagination: true,
+            });
+        });
+    </script>
+    <!-- //requried-jsfiles-for owl -->
+    <!-- Countdown-Timer-JavaScript -->
+    <script>
+        var d = new Date(new Date().getTime() + 948 * 120 * 120 * 2000);
+
+        // default example
+        simplyCountdown('.simply-countdown-one', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 1,
+            day: d.getDate()
+        });
+
+        // inline example
+        simplyCountdown('.simply-countdown-inline', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 1,
+            day: d.getDate(),
+            inline: true
+        });
+
+        //jQuery example
+        $('#simply-countdown-losange').simplyCountdown({
+            year: d.getFullYear(),
+            month: d.getMonth() + 1,
+            day: d.getDate(),
+            enableUtc: false
+        });
+    </script>
+    <!-- //Countdown-Timer-JavaScript -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+
+
+</body>
+</html>
