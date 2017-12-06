@@ -54,7 +54,9 @@ namespace EducationalWebsite.Controllers
         {
             if (cls.classDetail.Id == 0)
             {
+                cls.classDetail.SessionId = 2;
                 db.ClassDetails.Add(cls.classDetail);
+
                 await db.SaveChangesAsync();
             }
             else {

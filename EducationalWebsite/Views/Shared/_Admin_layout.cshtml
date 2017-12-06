@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="UTF-8c" />
@@ -285,6 +284,8 @@
                         <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-graduation-cap"></i><span>Classes</span> </a>
                         <ul class="ml-menu">
                             <li>@Html.ActionLink("Class Detail", "ClassesDetail", "Class")</li>
+                            <li>@Html.ActionLink("Add Class Detail", "AddClassDetail", "Class")</li>
+
                         </ul>
                     </li>
                     <li>
@@ -527,6 +528,7 @@
     </section>
     <!--Side menu and right menu -->
     <div class="color-bg"></div>
+   
     <!-- Jquery Core Js -->
     @Scripts.Render("~/bundles/LibAdminLayoutjs")
     @RenderBody()

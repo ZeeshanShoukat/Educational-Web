@@ -214,6 +214,7 @@
     <Compile Include="Controllers\AdminHomeController.cs" />
     <Compile Include="Controllers\ClassController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\D.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EventController.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -329,6 +331,10 @@
     <Compile Include="Migrations\201711250622175_StudentDetailAdded.Designer.cs">
       <DependentUpon>201711250622175_StudentDetailAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712060728364_Subjectdetailadded.cs" />
+    <Compile Include="Migrations\201712060728364_Subjectdetailadded.Designer.cs">
+      <DependentUpon>201712060728364_Subjectdetailadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -349,6 +355,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ClassVm.cs" />
     <Compile Include="ViewModels\StudentVm.cs" />
+    <Compile Include="ViewModels\SubjectVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminContent\3.html" />
@@ -618,6 +625,8 @@
     <Content Include="Views\Class\ClassesDetail.cshtml" />
     <Content Include="Views\Class\AddClassDetail.cshtml" />
     <Content Include="Views\Student\AddStudentDetail.cshtml" />
+    <Content Include="Views\Subject\SubjectDetail.cshtml" />
+    <Content Include="Views\Subject\AddSubjectDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -715,6 +724,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711250622175_StudentDetailAdded.resx">
       <DependentUpon>201711250622175_StudentDetailAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712060728364_Subjectdetailadded.resx">
+      <DependentUpon>201712060728364_Subjectdetailadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -29,6 +29,7 @@
                     </div>
                     @using (Html.BeginForm("AddStudent", "Student", FormMethod.Post))
                     {
+                        @Html.AntiForgeryToken()
                         <div class="body">
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-sm-6 col-xs-12">

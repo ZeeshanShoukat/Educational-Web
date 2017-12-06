@@ -13,6 +13,7 @@ namespace EducationalWebsite.Controllers
     public class StudentController : Controller
     {
         static int Studentcode;
+        static int StudentDetailId;
         ApplicationDbContext db;
         public StudentController()
         {
@@ -38,6 +39,7 @@ namespace EducationalWebsite.Controllers
             };
             return View(StdVm);
         }
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult AddStudent(Student student)
         {
@@ -45,12 +47,13 @@ namespace EducationalWebsite.Controllers
             {
                 db.Students.Add(student);
                 db.SaveChanges();
-
+                var Id = db.Students.SingleOrDefault(e => e.B_Form == student.B_Form).Id;
+                Studentcode = Id;
+                return RedirectToAction("AddStudentDetail");
             }
             else
             {
                 var record = db.Students.SingleOrDefault(m => m.Id == student.Id);
-              
                 record.Name = student.Name;
                 record.FatherName = student.FatherName;
                 record.B_Form = student.B_Form;
@@ -59,10 +62,22 @@ namespace EducationalWebsite.Controllers
                 record.Contact = student.Contact;
                 record.Address = student.Address;
                 db.SaveChanges();
+                Studentcode = student.Id;
+                var std = db.StudentDetails.Include("student").Include("Session").Include("class").Include("ClassSection").SingleOrDefault(m=>m.Id==StudentDetailId);
+                var sessionlist = db.Sessions.ToList();
+                var classlist = db.Classes.ToList();
+                var sectionlist = db.ClassSections.ToList();
+                var stddvm = new StudentVm
+                {
+                    StudentDetail=std,
+                    Sessions=sessionlist,
+                    Classes=classlist,
+                    ClassSections=sectionlist
+                };
+                return View("AddStudentDetail",stddvm);
+
             }
-            var Id = db.Students.SingleOrDefault(e=>e.B_Form==student.B_Form).Id;
-            Studentcode = Id;
-            return RedirectToAction("AddStudentDetail");
+
         }
         public ActionResult AddStudentDetail()
         {
@@ -87,41 +102,38 @@ namespace EducationalWebsite.Controllers
             student.StudentDetail.SessionId = Convert.ToInt32(sessionId);
             student.StudentDetail.StudentID = Studentcode;
             if (student.StudentDetail.Id == 0)
-            {   
+            { 
                 db.StudentDetails.Add(student.StudentDetail);
                 db.SaveChanges();
             }
             else
             {
-                //var record = db.Students.SingleOrDefault(m => m.Id == student.Id);
-                //record.Roll_No = student.Roll_No;
-                //record.Name = student.Name;
-                //record.FatherName = student.FatherName;
-                //record.B_Form = student.B_Form;
-                //record.GenderId = student.GenderId;
-                //record.DateofBirth = student.DateofBirth;
-                //record.Contact = student.Contact;
-                //record.Address = student.Address;
-                //record.ClassCode = student.ClassCode;
-                //record.ClassSection = student.ClassSection;
-                //db.SaveChanges();
+                var record = db.StudentDetails.SingleOrDefault(m=>m.Id==student.StudentDetail.Id);
+                record.Id = student.StudentDetail.Id;
+                record.StudentID = student.StudentDetail.StudentID;
+                record.Roll_No = student.StudentDetail.Roll_No;
+                record.SectionId = student.StudentDetail.SectionId;
+                record.ClassCode = student.StudentDetail.ClassCode;
+                record.SessionId = student.StudentDetail.SessionId;
+                db.SaveChanges();
             }
             return RedirectToAction("StudentDetail");
         }
 
         async public Task<ActionResult> UpdateStudent(int id)
         {
-            var std = await db.StudentDetails.Include(m=>m.Student.Gender).Include("class").Include("ClassSection").SingleOrDefaultAsync(m => m.Id == id);
+            var stdd = await db.StudentDetails.Include(m => m.Student.Gender).Include("session").Include("Class").Include("ClassSection").SingleOrDefaultAsync(m => m.Id==id);
+            var std = await db.Students.Where(m => m.Id == stdd.StudentID).Include("Gender").SingleOrDefaultAsync();
+            StudentDetailId = stdd.Id;
             var data = db.Genders.ToList();
-            var classlist = db.Classes.ToList();
-            var Sectionlist = db.ClassSections.ToList();
+            //var classlist = db.Classes.ToList();
+            //var Sectionlist = db.ClassSections.ToList();
             var StdVm = new StudentVm()
             {
-                StudentDetail = std,
+                Student=std,
+                StudentDetail = stdd,
                 Genders = data,
-                 ClassSections= Sectionlist,
-                Classes = classlist
-
+                //ClassSections= Sectionlist,
             };
             return View("AddStudent", StdVm);
         }

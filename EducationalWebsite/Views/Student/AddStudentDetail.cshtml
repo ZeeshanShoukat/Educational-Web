@@ -33,14 +33,15 @@
                                 <div class="col-sm-4 col-xs-12">
                                     <div class="form-group drop-custum">
                                         <select class="form-control show-tick" name="SessionId">
+                                            <option id="0">Select the Session</option>
+
+
                                             @foreach (var yr in Model.Sessions)
-                                            {    
+                                            {
                                                 <option value=@yr.Id>@yr.StartDate.Year - @yr.EndDate.Year </option>
-                                               
-                                                  
-                                                
                                             }
                                         </select>
+
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-sm-4 col-xs-12">
@@ -69,7 +70,7 @@
                             </div>
                         </div>
                     }
-                </div> 
+                </div>
             </div>
         </div>
     </div>

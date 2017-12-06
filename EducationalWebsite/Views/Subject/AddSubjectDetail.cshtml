@@ -1,9 +1,8 @@
-﻿@model EducationalWebsite.ViewModels.ClassVm
+﻿@model EducationalWebsite.ViewModels.SubjectVm
 @{
-    ViewBag.Title = "AddClassDetail";
+    ViewBag.Title = "AddSubjectDetail";
     Layout = "~/Views/Shared/_Admin_layout.cshtml";
 }
-
 @Styles.Render("~/bundles/LibStudentcss")
 
 <section class="content">
@@ -28,20 +27,20 @@
                             </li>
                         </ul>
                     </div>
-                    @using (Html.BeginForm("AddClassDetail", "Class", FormMethod.Post))
+                    @using (Html.BeginForm("AddSubjectDetail", "Subject", FormMethod.Post))
                     {
                         <div class="body">
                             <div class="row clearfix">
                                 <div class="col-lg-4 col-sm-4 col-xs-12">
                                     <div class="form-group drop-custum">
-                                        @Html.DropDownListFor(m => m.classDetail.ClassId, new SelectList(Model.Classes, "Id", "Name"), "Select Class", new { @class = "form-control show-tick" })
+                                        @Html.DropDownListFor(m => m.subjectDetails.SubjectId, new SelectList(Model.Subjects, "Id", "SubjectName"), "Select", new { @class = "form-control show-tick" })
                                     </div>
                                 </div>
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-4 col-sm-4 col-xs-12">
                                     <div class="form-group drop-custum">
-                                        @Html.DropDownListFor(m => m.classDetail.ClassSctionId, new SelectList(Model.ClassSections, "Id", "Name"), "Select Section", new { @class = "form-control show-tick" })
+                                        @Html.DropDownListFor(m => m.subjectDetails.ClassId, new SelectList(Model.Classes, "Id", "Name"), "Select Class", new { @class = "form-control show-tick" })
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +48,7 @@
                             <div class="row clearfix">
                                 <div class="col-lg-4 col-sm-4 col-xs-12">
                                     <div class="form-group drop-custum">
-                                        @Html.DropDownListFor(m => m.classDetail.TeacherId, new SelectList(Model.Teachers, "Id", "FirstName"), "Select Teacher", new { @class = "form-control show-tick" })
+                                        @Html.DropDownListFor(m => m.subjectDetails.TeacherId, new SelectList(Model.Teachers, "Id", "FirstName"), "Select Teacher", new { @class = "form-control show-tick" })
                                     </div>
                                 </div>
                             </div>
@@ -57,14 +56,15 @@
                                 <button type="submit" class="btn btn-raised g-bg-blush2">Save</button>
                             </div>
                         </div>
-                       @Html.HiddenFor(m=>m.classDetail.Id)
+                        @Html.HiddenFor(m => m.subjectDetails.Id)
                     }
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 </section>
 @Scripts.Render("~/bundles/LibStudentjs")
+
 
 
 

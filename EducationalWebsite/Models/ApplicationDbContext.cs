@@ -20,6 +20,8 @@ namespace EducationalWebsite.Models
         public DbSet<ClassSection> ClassSections  { get; set; }
         public DbSet<ClassDetail> ClassDetails { get; set; }
         public DbSet<Subject> Subjects { get; set; }
+        public DbSet<SubjectDetail> SubjectDetails { get; set; }
+
         public DbSet<Session> Sessions { get; set; }
    
 
