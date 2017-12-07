@@ -335,6 +335,10 @@
     <Compile Include="Migrations\201712060728364_Subjectdetailadded.Designer.cs">
       <DependentUpon>201712060728364_Subjectdetailadded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712070520144_examadded.cs" />
+    <Compile Include="Migrations\201712070520144_examadded.Designer.cs">
+      <DependentUpon>201712070520144_examadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -343,6 +347,7 @@
     <Compile Include="Models\ClassDetail.cs" />
     <Compile Include="Models\ClassSection.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Session.cs" />
@@ -727,6 +732,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712060728364_Subjectdetailadded.resx">
       <DependentUpon>201712060728364_Subjectdetailadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712070520144_examadded.resx">
+      <DependentUpon>201712070520144_examadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
