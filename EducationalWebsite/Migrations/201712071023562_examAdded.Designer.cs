@@ -7,13 +7,13 @@ namespace EducationalWebsite.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class examadded : IMigrationMetadata
+    public sealed partial class examAdded : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(examadded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(examAdded));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712070520144_examadded"; }
+            get { return "201712071023562_examAdded"; }
         }
         
         string IMigrationMetadata.Source

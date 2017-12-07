@@ -23,7 +23,9 @@ namespace EducationalWebsite.Models
         public DbSet<SubjectDetail> SubjectDetails { get; set; }
 
         public DbSet<Session> Sessions { get; set; }
-   
+        public DbSet<Exam> Exams { get; set; }
+
+
 
 
 
